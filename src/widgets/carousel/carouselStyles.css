@@ -1,0 +1,94 @@
+.carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: lightblue;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  overflow: hidden;
+  width: 1155px;
+}
+
+.carousel-sliders {
+  z-index: 1;
+  transition: all .55s ease-in;
+  justify-content: start;
+  gap: 15px;
+  display: flex;
+  list-style: none;
+  scroll-snap-type: x mandatory;
+  transform: translateX(0);
+}
+.slider {
+  scroll-snap-align: center;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.pagination ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  border: none;
+  color: white;
+  opacity: .6;
+  position: absolute;
+  background: none;
+}
+
+.prev-btn {
+  z-index: 2;
+  left: 5px;
+  cursor: pointer;
+}
+
+.next-btn {
+  z-index: 2;
+  cursor: pointer;
+  right: 5px;
+}
+
+.circle-dot {
+  background-color: black;
+  opacity: .5;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.circle-dot.active {
+  opacity: 1;
+}
+
+@media (max-width: 575.98px) { 
+  .carousel-view {
+    width: 375px;
+  }
+  .slider {
+    height: initial;
+  }
+  .pagination {
+    display: none;
+  }
+}
+@media (min-width: 576px) and (max-width: 1154.98px) {
+  .carousel-view {
+    width: 819px;
+  }
+  .slider {
+    height: 175px;
+  }
+}
